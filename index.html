@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="description" content="A simple, extendable starter portfolio / site" />
+		<title>My Portfolio — Starter</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="#">Your Name</a>
+				<nav class="site-nav" aria-label="Main navigation">
+					<ul>
+						<li><a href="#about">About</a></li>
+						<li><a href="#work">Work</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main class="site-main container">
+			<section id="hero" class="hero">
+				<h1>Hi — I build things on the web.</h1>
+				<p class="lead">A small, plain starter site you can extend for a portfolio or personal site.</p>
+				<p><a class="btn" href="#work">See my work</a></p>
+			</section>
+
+			<section id="about" class="card">
+				<h2>About</h2>
+				<p>Short bio or mission statement — replace this text with a short paragraph about yourself.</p>
+			</section>
+
+			<section id="work" class="card">
+				<h2>Selected Projects</h2>
+				<ul class="projects">
+					<li class="project-item">
+						<h3>Project Title</h3>
+						<p class="muted">Short description of the project. Add links and images as needed.</p>
+					</li>
+				</ul>
+			</section>
+
+			<section id="contact" class="card">
+				<h2>Contact</h2>
+				<p>Let people know how to reach you — email, links to social or a contact form.</p>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">
+				<p class="muted">© <span id="year"></span> Your Name — Built with a tiny starter template.</p>
+			</div>
+		</footer>
+
+		<!-- compiled TypeScript is loaded from /dist/main.js (build with `npm run build`) -->
+		<script defer src="/dist/main.js"></script>
+	</body>
+</html>
