@@ -57,6 +57,28 @@ Note about lockfiles
 -------------------
 If you plan to use the included workflow as-is it prefers `npm ci` (which requires a committed `package-lock.json`) for consistent installs/reproducible builds. The workflow now falls back to `npm install` if a lockfile is not present, but it's recommended to commit `package-lock.json` for reliable, repeatable CI installs.
 
+Push permission / 403 errors
+---------------------------------
+If the Pages deployment step fails with a 403 permission error (for example: "Permission to <owner>/<repo>.git denied to github-actions[bot]."), it means the token used by the Action did not have sufficient permission to push to the repo. The workflow now requests `contents: write` permission so the built workflow run should be able to push the generated site to `gh-pages`.
+
+If you still see permission failures after this change, check the following:
+
+- Branch protection rules: if `gh-pages` is protected and doesn't allow push from workflows, the Action won't be able to push. Either relax the rule for the `gh-pages` branch or configure the protection so Actions can push or create the branch.
+- Organization or repo policy: some orgs restrict what the `GITHUB_TOKEN` can do. In that case use a separate Personal Access Token (PAT) with repo write permissions and store it as a secret (ex: `DEPLOY_TOKEN`) and then update the workflow to use that secret ( `github_token: ${{ secrets.DEPLOY_TOKEN }}` ) instead of `secrets.GITHUB_TOKEN`.
+
+Example alternative (use a PAT stored at `DEPLOY_TOKEN`):
+
+```yaml
+			- name: Deploy to GitHub Pages
+				uses: peaceiris/actions-gh-pages@v3
+				with:
+					github_token: ${{ secrets.DEPLOY_TOKEN }}
+					publish_dir: ./out
+					publish_branch: gh-pages
+```
+
+Using a PAT gives you more control (you can limit it to a dedicated account or token) but requires extra configuration and secret management.
+
 Want more?
 - I can add a build tool (Vite/parcel), sample components, or a small form handler if you want to accept messages. Tell me what you need next.
 
