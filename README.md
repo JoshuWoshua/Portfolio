@@ -53,6 +53,10 @@ CI / GitHub Actions
 -------------------
 The workflow `.github/workflows/deploy.yml` runs `npm ci` and `npm run build` before publishing `dist/*` (and other site files) to the `gh-pages` branch. This means you don't need to commit compiled files — the Action builds them for you.
 
+Note about lockfiles
+-------------------
+If you plan to use the included workflow as-is it prefers `npm ci` (which requires a committed `package-lock.json`) for consistent installs/reproducible builds. The workflow now falls back to `npm install` if a lockfile is not present, but it's recommended to commit `package-lock.json` for reliable, repeatable CI installs.
+
 Want more?
 - I can add a build tool (Vite/parcel), sample components, or a small form handler if you want to accept messages. Tell me what you need next.
 

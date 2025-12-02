@@ -26,8 +26,16 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies (prefer lockfile)
+        run: |
+          # prefer `npm ci` for reproducible CI installs, but fall back to `npm install`
+          if [ -f package-lock.json ]; then
+            echo "Found package-lock.json — running npm ci"
+            npm ci
+          else
+            echo "No package-lock.json found — running npm install instead"
+            npm install
+          fi
 
       - name: Build TypeScript
         run: npm run build
