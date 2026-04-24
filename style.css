@@ -1,12 +1,13 @@
 :root{
-  --bg:#0f1724; /* dark blue-black */
-  --card:#0b1220;
-  --muted:#9aa4b2;
-  --accent:#7dd3fc; /* cyan */
-  --text:#e6eef6;
+  --bg:#1a1209; /* dark warm brown-black */
+  --card:#120d06;
+  --muted:#a89880;
+  --accent:#ff7a20; /* bright orange */
+  --text:#f5ede0;
   --radius:12px;
   --container:1100px;
-  --ff-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --ff-sans:'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --ff-display:'Bebas Neue', Impact, sans-serif;
 }
 
 *{box-sizing:border-box}
@@ -14,7 +15,7 @@ html,body{height:100%}
 body{
   margin:0;
   font-family:var(--ff-sans);
-  background:linear-gradient(180deg,#061226 0%, #071428 60%);
+  background:#1a1108;
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   line-height:1.45;
@@ -31,32 +32,122 @@ body{
   background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{font-weight:700;color:var(--text);text-decoration:none}
+.brand{font-weight:700;color:var(--text);text-decoration:none;font-family:var(--ff-display);font-size:1.6rem;letter-spacing:.05em}
 .site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
 .site-nav a{color:var(--muted);text-decoration:none;padding:.35rem .5rem;border-radius:6px}
 .site-nav a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
 
 .site-main{padding:3rem 0}
 .hero{display:flex;flex-direction:column;gap:1rem;padding:3rem;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border-radius:var(--radius)}
-.hero h1{font-size:2rem;margin:0}
+.hero-split{flex-direction:row;align-items:flex-start;gap:2.5rem}
+.hero-left{flex:1;display:flex;flex-direction:column;gap:1rem}
+.hero-right{width:260px;flex-shrink:0;display:flex;flex-direction:column;gap:.75rem}
+.hero h1{font-size:2.6rem;line-height:1.05;margin:0;font-family:var(--ff-display);letter-spacing:.02em}
 .lead{color:var(--muted);max-width:60ch}
+.eyebrow{margin:0;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem}
 .btn{
-  display:inline-block;padding:.6rem .9rem;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042028;border-radius:10px;font-weight:600;text-decoration:none;margin-top:.5rem}
+  display:inline-block;padding:.6rem .9rem;background:linear-gradient(90deg,var(--accent),#ff5500);color:#1a0800;border-radius:10px;font-weight:600;text-decoration:none;margin-top:.5rem}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.2)}
 
 .card{margin-top:1.25rem;padding:1.25rem;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.03)}
 .card h2{margin-top:0}
 
-.projects{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.split{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+.skills{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.skills li{padding:.6rem .7rem;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(255,255,255,.02)}
+
+.projects{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1rem}
 .project-item{padding:1rem;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
+.project-media{margin-bottom:.65rem}
+.project-icon{width:44px;height:44px;display:block;object-fit:contain;opacity:.95}
+.project-tag{margin:.1rem 0 .35rem;color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.project-links{display:flex;flex-wrap:wrap;gap:.7rem;margin:.8rem 0 0}
+.project-links a{color:var(--text)}
+.project-note{margin-top:1rem}
+.project-note a{color:#f0c030}
+.muted a{color:#f0c030}
+
+/* Use this on white icons/images to match the orange accent color. */
+.tint-white-orange{filter:brightness(0) saturate(100%) invert(61%) sepia(91%) saturate(1837%) hue-rotate(357deg) brightness(101%) contrast(102%)}
+
+.engine-grid{list-style:none;margin:1rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.engine-item{padding:1rem;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.015)}
+.engine-item h3{margin:0;font-size:1.08rem}
+.engine-item p{margin:.65rem 0 0}
+.engine-top{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.engine-pill{font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:#1a0800;background:linear-gradient(90deg,#f0c030,#ff9d2e);padding:.2rem .5rem;border-radius:999px;font-weight:700}
+
+.projects-page .hero-compact{padding:2rem}
+.project-detail{position:relative;padding:1rem 5rem 1rem 1rem;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(0,0,0,.15);margin-top:1rem;scroll-margin-top:6rem}
+.project-detail::before{content:"";position:absolute;top:0.5rem;bottom:0.5rem;right:0.5rem;width:50px;border-radius:5px;background:rgba(255,122,32,0.5);pointer-events:none}
+.project-detail h3{margin:.15rem 0 .55rem}
+.project-badge-stack{position:absolute;top:.9rem;right:.9rem;display:flex;flex-direction:column;gap:.35rem;z-index:1}
+.project-badge-icon{width:34px;height:34px;display:block;object-fit:contain;opacity:.95}
+.additional-grid{margin-top:1rem}
+
+.projects-page .additional-motif{position:relative;padding:1rem 4.4rem 1rem 1rem}
+.projects-page .additional-motif::before{content:"";position:absolute;top:.5rem;bottom:.5rem;right:.5rem;width:42px;border-radius:5px;background:rgba(255,122,32,0.5);pointer-events:none}
+.projects-page .additional-motif .project-media{position:absolute;top:.9rem;right:.9rem;margin:0;z-index:1;display:flex;flex-direction:column;gap:.35rem}
+.projects-page .additional-motif .project-icon{width:26px;height:26px}
+
+/* Reusable icon tooltip system: assign tip-school / tip-group / tip-solo classes. */
+.icon-tip{position:relative;display:inline-flex}
+.icon-tip::after{
+  content:"";
+  position:absolute;
+  right:calc(100% + .45rem);
+  top:50%;
+  transform:translateY(-50%) translateX(4px);
+  padding:.23rem .5rem;
+  border-radius:7px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(8,6,3,.95);
+  color:var(--text);
+  font-size:.72rem;
+  line-height:1.2;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .16s ease, transform .16s ease;
+}
+.icon-tip:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
+.icon-tip.tip-school::after{content:"School Project"}
+.icon-tip.tip-group::after{content:"Group Project"}
+.icon-tip.tip-solo::after{content:"Solo Project"}
+
+.process-dropdown{margin-top:.85rem;border-top:1px solid rgba(255,255,255,.08);padding-top:.75rem}
+.process-dropdown summary{cursor:pointer;color:var(--text);font-weight:700;list-style:none}
+.process-dropdown summary::-webkit-details-marker{display:none}
+.process-dropdown summary::after{content:"+";float:right;color:var(--accent);font-weight:700}
+.process-dropdown[open] summary::after{content:"-"}
+.process-content{margin-top:.65rem;display:grid;gap:.45rem}
+.process-content p{margin:0}
+.process-content strong{color:var(--text)}
+
+.contact-line{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.contact-line a{color:#f0c030}
 .muted{color:var(--muted)}
 
-.site-footer{padding:2rem 0;margin-top:3rem;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+.site-footer{
+  padding:3rem 0 2rem;
+  margin-top:4rem;
+  border-top:1px solid rgba(255,255,255,0.05);
+  color:var(--muted);
+  background:linear-gradient(180deg, transparent 0%, #0a0703 40%, #070502 100%);
+}
+.footer-grid{display:flex;gap:1.5rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap}
+.footer-copy{margin:0}
+.tz-display{margin:0}
 
 /* small screens */
 @media (max-width:640px){
   .header-inner{flex-direction:row;justify-content:space-between}
   .hero{padding:2rem}
-  .hero h1{font-size:1.5rem}
+  .hero-split{flex-direction:column}
+  .hero-right{width:100%}
+  .hero h1{font-size:2rem}
+  .split{grid-template-columns:1fr}
 }
 
 /* utility */
@@ -66,7 +157,7 @@ body{
 input,textarea,button{font-family:var(--ff-sans)}
 
 /* small accessible focus ring */
-a:focus{outline:3px solid rgba(125,211,252,0.12);outline-offset:3px}
+a:focus{outline:3px solid rgba(255,122,32,0.25);outline-offset:3px}
 
 /* help people extend: color token comments */
 /* --accent is a good place to change the brand color */

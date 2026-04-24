@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta
+			name="description"
+			content="Full game design project archive with featured case studies and additional work."
+		/>
+		<title>Joshua Kim-Pearson | Projects</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="index.html">Joshua Kim-Pearson</a>
+				<nav class="site-nav" aria-label="Main navigation">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#featured">Featured</a></li>
+						<li><a href="#additional">Additional</a></li>
+						<li><a href="index.html#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main class="site-main container projects-page">
+			<section class="hero hero-compact">
+				<p class="eyebrow">Projects</p>
+				<h1>My Archive</h1>
+				<p class="lead">
+					Here you'll find all of my game design related projects, included are personal projects, school projects, and game jams.
+                    My featured projects are the ones I'm most proud of but feel free to explore all of them!
+				</p>
+			</section>
+
+			<section id="featured" class="card">
+				<h2>Featured Projects</h2>
+				<article id="project-one" class="project-detail has-badge">
+					<div class="project-badge-stack">
+						<span class="icon-tip tip-school">
+							<img
+								class="project-badge-icon tint-white-orange"
+								src="assets/images/School.svg"
+								alt="Graduation cap icon"
+							/>
+						</span>
+						<span class="icon-tip tip-group">
+							<img
+								class="project-badge-icon tint-white-orange"
+								src="assets/images/Group.svg"
+								alt="Group work icon"
+							/>
+						</span>
+					</div>
+					<p class="project-tag">Roguelike | PC Web</p>
+					<h3>Tanktrition</h3>
+					<p class="muted">
+						Designed the core gameplay loop and scripted enemy, player, and projectile behaviors. Built with a
+						partner in Unity2D for <a href="https://itch.io/jam/7drl-challenge-2026">7DRL2026</a>, including original player, enemy, and UI art assets.
+					</p>
+					<p class="project-links"><a href="https://stan-21.itch.io/tanktrition">Playable Build</a>  <!-- <a href="#">Gameplay Video</a></p> -->
+					<details class="process-dropdown">
+						<summary>View My Involvement</summary>
+						<div class="process-content muted">
+							<p><strong>Design Goal:</strong> Create a compelling roguelike experience within the time constraint of 7 days.</p>
+							<p><strong>My Role:</strong> Designed core game loop, gameplay scripting, enemy scripting, art assets, and UI design.</p>
+							<!-- <p><strong>Iteration:</strong> Adjusted enemy projectile speed/spacing and spawn pacing after playtests to reduce early overwhelm while preserving challenge.</p> -->
+						</div>
+					</details>
+				</article>
+
+				<article id="project-two" class="project-detail">
+                    <div class="project-badge-stack">
+						<span class="icon-tip tip-solo">
+							<img
+								class="project-badge-icon tint-white-orange"
+								src="assets/images/Solo.svg"
+								alt="Solo work icon"
+							/>
+						</span>
+					</div>
+					<p class="project-tag">Typing - Incremental | Windows</p>
+					<h3>Typinko</h3>
+					<p class="muted">
+						Solo-developed desktop overlay game in Godot where typing speed drives progression. Designed the core loop,
+						scripted gameplay and UI systems, and created all art and sound assets.
+					</p>
+					<p class="project-links"><a href="https://joshuwoshua.itch.io/typinko">Download</a></p>
+					<details class="process-dropdown">
+						<summary>View My Involvement</summary>
+						<div class="process-content muted">
+							<p><strong>Design Goal:</strong> Turn typing performance into a rewarding progression system with clear feedback loops and an hyper-casual friendly experience.</p>
+							<p><strong>My Role:</strong> Full solo pipeline: loop design, gameplay scripting, UI flow, visual/audio production.</p>
+                            <p><strong>Production Hurdles:</strong> Hooking into the windows API to get real-time typing data for the game's systems.</p>
+							<!-- <p><strong>Iteration:</strong> Reworked pacing curves and reward timings after test sessions so new players hit meaningful upgrades earlier.</p> -->
+						</div>
+					</details>
+				</article>
+			</section>
+
+			<section id="additional" class="card">
+				<h2>Additional Projects</h2>
+				<p class="muted">
+					Here are some additional projects of mine. School projects are marked with an icon, but I'm proud of the ones listed here.
+				</p>
+				<ul class="projects additional-grid">
+					<li class="project-item additional-motif">
+						<div class="project-media">
+							<span class="icon-tip tip-school">
+								<img
+									class="project-icon tint-white-orange"
+									src="assets/images/School.svg"
+									alt="School project icon"
+								/>
+							</span>
+                            <span class="icon-tip tip-group">
+								<img
+									class="project-icon tint-white-orange"
+									src="assets/images/Group.svg"
+									alt="Group work icon"
+								/>
+							</span>
+						</div>
+                        <p class="project-tag">Platformer | PC Web</p>
+						<h3>Citty Kat</h3>
+						<p class="muted">Final project made in Phaser with 2 teammates. I primarily did the level design, but also worked on gameplay mechanics and UI elements.</p>
+                        <p class="project-links"><a href="https://joshuwoshua1.github.io/Final-Game-Project/">Playable Build</a></p>
+					</li>
+					<li class="project-item additional-motif">
+						<div class="project-media">
+							<span class="icon-tip tip-school">
+								<img
+									class="project-icon tint-white-orange"
+									src="assets/images/School.svg"
+									alt="School project icon"
+								/>
+							</span>
+                            <span class="icon-tip tip-solo">
+								<img
+									class="project-icon tint-white-orange"
+									src="assets/images/Solo.svg"
+									alt="Solo work icon"
+								/>
+							</span>
+						</div>
+                        <p class="project-tag">Platformer | PC Web</p>
+						<h3>Josh's Jumpy Jumble</h3>
+						<p class="muted">Short platformer project made in Phaser. Main focus was on level design and gameplay mechanics.</p>
+                        <p class="project-links"><a href="https://joshuwoshua1.github.io/2D-Platformer/">Playable Build</a></p>
+					</li>
+                <!--
+					<li class="project-item">
+						<h3>placeholder</h3>
+						<p class="muted">placeholder</p>
+					</li>
+                -->
+				</ul>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">
+				<div class="footer-grid">
+					<p class="muted footer-copy">© <span id="year"></span> Joshua Kim-Pearson</p>
+                    <p class="muted">Page Updated: 4/23/2026</p>
+					<p class="muted tz-display">Based in <span id="tz-name"></span></p>
+				</div>
+                
+			</div>
+		</footer>
+
+		<!-- compiled TypeScript is loaded from dist/main.js (build with `npm run build`) -->
+		<script defer src="dist/main.js"></script>
+	</body>
+</html>

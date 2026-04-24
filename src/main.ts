@@ -39,8 +39,24 @@ function attachSmoothAnchors() {
   });
 }
 
+function setTimezone() {
+  const el = qs<HTMLSpanElement>('#tz-name');
+  if (!el) return;
+
+  // Check whether DST is currently active in the Pacific timezone.
+  // DST is active when January's offset differs from July's offset.
+  const now = new Date();
+  const jan = new Date(now.getFullYear(), 0, 1);
+  const jul = new Date(now.getFullYear(), 6, 1);
+  const stdOffset = Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+  const isDST = now.getTimezoneOffset() < stdOffset;
+
+  el.textContent = isDST ? 'Pacific Coast · PDT (UTC−7)' : 'Pacific Coast · PST (UTC−8)';
+}
+
 function initSite() {
   setCurrentYear();
+  setTimezone();
   attachNavToggle();
   attachSmoothAnchors();
 }

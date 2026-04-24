@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="description" content="Game design portfolio with case studies, process notes, and playable links." />
-		<title>Your Name | Game Design Portfolio</title>
+		<meta name="description" content="Game design portfolio with " />
+		<title>Joshua Kim-Pearson | Game Portfolio</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -16,12 +16,10 @@
 	<body>
 		<header class="site-header">
 			<div class="container header-inner">
-				<a class="brand" href="#">Your Name</a>
+				<a class="brand" href="index.html">Joshua Kim-Pearson</a>
 				<nav class="site-nav" aria-label="Main navigation">
 					<ul>
-						<li><a href="#projects">Projects</a></li>
-						<li><a href="#process">Process</a></li>
-						<li><a href="#about">About</a></li>
+						<li><a href="projects.html">Projects</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
@@ -29,16 +27,27 @@
 		</header>
 
 		<main class="site-main container">
-			<section id="hero" class="hero">
-				<p class="eyebrow">Game Design Portfolio</p>
-				<h1>I design systems that create memorable player stories.</h1>
-				<p class="lead">
-					Designer focused on encounter design, progression tuning, and readable combat spaces.
-					This site is a lightweight one-page portfolio you can keep updating as you ship projects.
-				</p>
-				<div class="hero-cta">
-					<a class="btn" href="#projects">View Case Studies</a>
-					<a class="btn btn-ghost" href="#contact">Hire Me</a>
+			<section id="hero" class="hero hero-split">
+				<div class="hero-left">
+					<p class="eyebrow">Who I am</p>
+					<h1>Aspiring Game Designer & Maker</h1>
+					<p class="lead">
+						I focus on mechanics and systems design, but I also have experience with most aspects of game development.
+						I love to create games in my freetime and am looking for an internship or junior role to break into the industry.
+					</p>
+					<div class="hero-cta">
+						<a class="btn" href="projects.html">View Projects</a>
+						<a class="btn btn-ghost" href="#contact">Contact Me</a>
+					</div>
+				</div>
+				<div class="hero-right">
+					<p class="eyebrow">Technical Skills</p>
+					<ul class="skills">
+						<li>Gameplay Scripting</li>
+						<li>Systems Design</li>
+						<li>Mechanics Design</li>
+						<li>Progression Tuning</li>
+					</ul>
 				</div>
 			</section>
 
@@ -46,21 +55,24 @@
 				<h2>Featured Projects</h2>
 				<ul class="projects">
 					<li class="project-item">
-						<p class="project-tag">Action RPG | PC</p>
-						<h3>Project Name One</h3>
+						<p class="project-tag">Roguelike | PC Web</p>
+						<h3>Tanktrition</h3>
 						<p class="muted">
-							Designed core combat loop and enemy telegraph language. Improved 10-minute retention in
-							playtests by 22%.
+							Designed core gameplay loop and scripted the behaviors for enemies, players, and projectiles.
+							I also created all the enemy, player, and UI assets for the game. It was built by me and a partner in Unity2D for <a href="https://itch.io/jam/7drl-challenge-2026">7DRL2026</a>.
 						</p>
-						<p class="project-links"><a href="#">Case Study</a> <a href="#">Gameplay Video</a></p>
+						<p class="project-links"><a href="projects.html#project-one">Jump to Project</a></p>
 					</li>
 					<li class="project-item">
-						<p class="project-tag">Cozy Sim | Mobile</p>
-						<h3>Project Name Two</h3>
+						<p class="project-tag">Typing - Incremental | Windows</p>
+						<h3>Typinko</h3>
 						<p class="muted">
-							Built progression pacing spreadsheets and economy tuning passes across 30+ sessions.
-						</p>
-						<p class="project-links"><a href="#">Design Doc</a> <a href="#">Postmortem</a></p>
+							Solo developed desktop overlay game, using your typing speed to progress. 
+							I designed the core loop, scripted all the gameplay and UI, and created all the art and sound assets.
+						</p> 
+						
+						<p class="project-links"><a href="projects.html#project-two">Jump to Project</a></p>
+						<!--
 					</li>
 					<li class="project-item">
 						<p class="project-tag">Puzzle Adventure | Student</p>
@@ -68,11 +80,44 @@
 						<p class="muted">
 							Led level scripting, checkpoint flow, and UX playtest iteration to reduce churn at level 3.
 						</p>
-						<p class="project-links"><a href="#">Playable Build</a> <a href="#">Level Breakdown</a></p>
+						<p class="project-links"><a href="projects.html#project-three">Jump to Project</a></p>
+					</li>
+						--->
+				</ul>
+				<p class="muted project-note">
+					All the rest of my projects live on the full <a href="projects.html">projects page</a>, including smaller experiments, and classwork.
+				</p>
+			</section>
+
+			<section id="engines" class="card">
+				<h2>Engine Proficiency</h2>
+				<p class="muted">
+					Tools I am most comfortable using to create gameplay prototypes and iterate on mechanics.
+				</p>
+				<ul class="engine-grid">
+					<li class="engine-item">
+						<div class="engine-top">
+							<h3>Unity</h3>
+							<span class="engine-pill">Primary</span>
+						</div>
+						<p class="muted">Experience in gameplay scripting, 2D/3D prototyping, jam-scale production, and tool creation.</p>
+					</li>
+					<li class="engine-item">
+						<div class="engine-top">
+							<h3>Godot</h3>
+							<span class="engine-pill">Learning</span>
+						</div>
+						<p class="muted">Privately persuing a project on Godot, exploring its capabilities for 2D game development.</p>
+					</li>
+					<li class="engine-item">
+						<div class="engine-top">
+							<h3>Phaser</h3>
+						</div>
+						<p class="muted">Built 2D web games and interactive experiences using JavaScript for school projects.</p>
 					</li>
 				</ul>
 			</section>
-
+		<!--
 			<section id="process" class="card">
 				<h2>How I Work</h2>
 				<ul class="pillars">
@@ -90,39 +135,27 @@
 					</li>
 				</ul>
 			</section>
-
-			<section id="about" class="card split">
-				<div>
-					<h2>About</h2>
-					<p>
-						I am a game designer with strengths in scripting, encounter flow, and balancing. I enjoy
-						making complex systems feel clear and rewarding for players.
-					</p>
-				</div>
-				<ul class="skills">
-					<li>Gameplay Scripting</li>
-					<li>Encounter Design</li>
-					<li>Progression Tuning</li>
-					<li>Playtest Analysis</li>
-				</ul>
-			</section>
-
+		-->
 			<section id="contact" class="card">
 				<h2>Contact</h2>
 				<p>Looking for a game design intern or junior designer? Reach out:</p>
 				<p class="contact-line">
-					<a href="mailto:you@example.com">you@example.com</a>
+					<a href="mailto:kimjoshua896@gmail.com">kimjoshua896@gmail.com</a>
 					<span>•</span>
-					<a href="#">Itch.io</a>
+					<a href="https://joshuwoshua.itch.io/">Itch.io</a>
 					<span>•</span>
-					<a href="#">LinkedIn</a>
+					<a href="https://www.linkedin.com/in/joshua-kim-pearson-848a0a333/">LinkedIn</a>
 				</p>
 			</section>
 		</main>
 
 		<footer class="site-footer">
 			<div class="container">
-				<p class="muted">© <span id="year"></span> Your Name. Built for game design applications.</p>
+				<div class="footer-grid">
+					<p class="muted footer-copy">© <span id="year"></span> Joshua Kim-Pearson</p>
+					<p class="muted">Page Updated: 4/23/2026</p>
+					<p class="muted tz-display">Based in <span id="tz-name"></span></p>
+				</div>
 			</div>
 		</footer>
 
