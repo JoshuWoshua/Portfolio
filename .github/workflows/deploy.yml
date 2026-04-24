@@ -32,7 +32,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: npm
 
       - name: Install dependencies
         run: |
@@ -45,13 +44,24 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Prepare artifact
+        run: |
+          mkdir -p out
+          cp index.html out/
+          cp projects.html out/
+          cp style.css out/
+          cp -R dist out/dist
+          if [ -d assets ]; then
+            cp -R assets out/assets
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./out
 
   # Deployment job
   deploy:
