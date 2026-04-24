@@ -3,9 +3,15 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="description" content="A simple, extendable starter portfolio / site" />
-		<title>My Portfolio — Starter</title>
-		<link rel="stylesheet" href="/style.css" />
+		<meta name="description" content="Game design portfolio with case studies, process notes, and playable links." />
+		<title>Your Name | Game Design Portfolio</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<header class="site-header">
@@ -13,8 +19,9 @@
 				<a class="brand" href="#">Your Name</a>
 				<nav class="site-nav" aria-label="Main navigation">
 					<ul>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#process">Process</a></li>
 						<li><a href="#about">About</a></li>
-						<li><a href="#work">Work</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
@@ -23,39 +30,103 @@
 
 		<main class="site-main container">
 			<section id="hero" class="hero">
-				<h1>Hi — I build things on the web.</h1>
-				<p class="lead">A small, plain starter site you can extend for a portfolio or personal site.</p>
-				<p><a class="btn" href="#work">See my work</a></p>
+				<p class="eyebrow">Game Design Portfolio</p>
+				<h1>I design systems that create memorable player stories.</h1>
+				<p class="lead">
+					Designer focused on encounter design, progression tuning, and readable combat spaces.
+					This site is a lightweight one-page portfolio you can keep updating as you ship projects.
+				</p>
+				<div class="hero-cta">
+					<a class="btn" href="#projects">View Case Studies</a>
+					<a class="btn btn-ghost" href="#contact">Hire Me</a>
+				</div>
 			</section>
 
-			<section id="about" class="card">
-				<h2>About</h2>
-				<p>Short bio or mission statement — replace this text with a short paragraph about yourself.</p>
-			</section>
-
-			<section id="work" class="card">
-				<h2>Selected Projects</h2>
+			<section id="projects" class="card">
+				<h2>Featured Projects</h2>
 				<ul class="projects">
 					<li class="project-item">
-						<h3>Project Title</h3>
-						<p class="muted">Short description of the project. Add links and images as needed.</p>
+						<p class="project-tag">Action RPG | PC</p>
+						<h3>Project Name One</h3>
+						<p class="muted">
+							Designed core combat loop and enemy telegraph language. Improved 10-minute retention in
+							playtests by 22%.
+						</p>
+						<p class="project-links"><a href="#">Case Study</a> <a href="#">Gameplay Video</a></p>
 					</li>
+					<li class="project-item">
+						<p class="project-tag">Cozy Sim | Mobile</p>
+						<h3>Project Name Two</h3>
+						<p class="muted">
+							Built progression pacing spreadsheets and economy tuning passes across 30+ sessions.
+						</p>
+						<p class="project-links"><a href="#">Design Doc</a> <a href="#">Postmortem</a></p>
+					</li>
+					<li class="project-item">
+						<p class="project-tag">Puzzle Adventure | Student</p>
+						<h3>Project Name Three</h3>
+						<p class="muted">
+							Led level scripting, checkpoint flow, and UX playtest iteration to reduce churn at level 3.
+						</p>
+						<p class="project-links"><a href="#">Playable Build</a> <a href="#">Level Breakdown</a></p>
+					</li>
+				</ul>
+			</section>
+
+			<section id="process" class="card">
+				<h2>How I Work</h2>
+				<ul class="pillars">
+					<li>
+						<h3>1. Frame the Player Goal</h3>
+						<p class="muted">Define intended emotion, skill test, and fail states before building content.</p>
+					</li>
+					<li>
+						<h3>2. Prototype Fast</h3>
+						<p class="muted">Use scripting tools to test loop viability before polish and art lock.</p>
+					</li>
+					<li>
+						<h3>3. Playtest and Tune</h3>
+						<p class="muted">Gather player behavior data and adjust difficulty, pacing, and readability.</p>
+					</li>
+				</ul>
+			</section>
+
+			<section id="about" class="card split">
+				<div>
+					<h2>About</h2>
+					<p>
+						I am a game designer with strengths in scripting, encounter flow, and balancing. I enjoy
+						making complex systems feel clear and rewarding for players.
+					</p>
+				</div>
+				<ul class="skills">
+					<li>Gameplay Scripting</li>
+					<li>Encounter Design</li>
+					<li>Progression Tuning</li>
+					<li>Playtest Analysis</li>
 				</ul>
 			</section>
 
 			<section id="contact" class="card">
 				<h2>Contact</h2>
-				<p>Let people know how to reach you — email, links to social or a contact form.</p>
+				<p>Looking for a game design intern or junior designer? Reach out:</p>
+				<p class="contact-line">
+					<a href="mailto:you@example.com">you@example.com</a>
+					<span>•</span>
+					<a href="#">Itch.io</a>
+					<span>•</span>
+					<a href="#">LinkedIn</a>
+				</p>
 			</section>
 		</main>
 
 		<footer class="site-footer">
 			<div class="container">
-				<p class="muted">© <span id="year"></span> Your Name — Built with a tiny starter template.</p>
+				<p class="muted">© <span id="year"></span> Your Name. Built for game design applications.</p>
 			</div>
 		</footer>
 
-		<!-- compiled TypeScript is loaded from /dist/main.js (build with `npm run build`) -->
-		<script defer src="/dist/main.js"></script>
+		<!-- compiled TypeScript is loaded from dist/main.js (build with `npm run build`) -->
+		<script defer src="dist/main.js"></script>
 	</body>
 </html>
