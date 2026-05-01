@@ -47,8 +47,7 @@ jobs:
       - name: Prepare artifact
         run: |
           mkdir -p out
-          cp index.html out/
-          cp projects.html out/
+          cp ./*.html out/
           cp style.css out/
           cp -R dist out/dist
           if [ -d assets ]; then
