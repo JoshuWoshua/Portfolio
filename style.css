@@ -21,6 +21,20 @@ body{
   line-height:1.45;
 }
 
+.wip-banner{
+  display:block;
+  background:linear-gradient(90deg,#f0c030,#f5a800);
+  color:#1a0800;
+  text-align:center;
+  padding:.6rem 1rem;
+  font-family:var(--ff-display);
+  font-size:1.1rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border-radius:var(--radius);
+  margin-bottom:1.25rem;
+}
+
 .container{
   max-width:var(--container);
   margin:0 auto;
@@ -57,7 +71,7 @@ body{
 .skills{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
 .skills li{padding:.6rem .7rem;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(255,255,255,.02)}
 
-.projects{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1rem}
+.projects{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1rem;align-items:start}
 .project-item{padding:1rem;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
 .project-media{margin-bottom:.65rem}
 .project-icon{width:44px;height:44px;display:block;object-fit:contain;opacity:.95}
@@ -146,6 +160,8 @@ body{
   .hero{padding:2rem}
   .hero-split{flex-direction:column}
   .hero-right{width:100%}
+  .case-study-hero{flex-direction:column}
+  .case-study-hero-right{width:100%}
   .hero h1{font-size:2rem}
   .split{grid-template-columns:1fr}
 }
@@ -158,6 +174,22 @@ input,textarea,button{font-family:var(--ff-sans)}
 
 /* small accessible focus ring */
 a:focus{outline:3px solid rgba(255,122,32,0.25);outline-offset:3px}
+
+/* case study pages */
+.case-study-back{display:inline-block;margin-bottom:1.5rem;color:var(--muted);text-decoration:none;font-size:.88rem;letter-spacing:.03em}
+.case-study-back:hover{color:var(--text)}
+.case-study-hero{margin-bottom:0;flex-direction:row;align-items:center;gap:2.5rem}
+.case-study-hero-left{flex:1;display:flex;flex-direction:column;gap:1rem}
+.case-study-hero-right{flex-shrink:0;width:380px}
+.case-study-hero-img{width:100%;border-radius:10px;display:block;border:1px solid rgba(255,255,255,.08)}
+.case-study-meta{margin-top:1rem}
+.case-meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem}
+.case-meta-item p{margin:.2rem 0 0}
+.case-study-section{margin-top:1rem}
+.case-study-section h2{margin-top:0}
+.case-study-subhead{margin:.1rem 0 .4rem;font-size:1rem;color:var(--text);font-weight:700}
+.case-study-list{margin:.6rem 0 0;padding-left:1.2rem;display:grid;gap:.35rem}
+.case-study-list li{line-height:1.5}
 
 /* help people extend: color token comments */
 /* --accent is a good place to change the brand color */
