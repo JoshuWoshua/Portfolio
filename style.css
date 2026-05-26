@@ -126,6 +126,77 @@ body{
 .project-item{padding:1rem;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.36), transparent);border:1px solid var(--line-soft)}
 .project-media{margin-bottom:.65rem}
 .project-thumb{width:100%;height:260px;display:block;object-fit:cover;border-radius:8px;border:1px solid var(--line-soft);margin:.35rem 0 .75rem}
+.featured-carousel{
+  width:min(100%, 760px);
+  margin:.35rem auto .75rem;
+  display:grid;
+  grid-template-columns:auto minmax(0, 1fr) auto;
+  align-items:center;
+  gap:.85rem;
+}
+.featured-carousel-frame{
+  position:relative;
+  width:min(100%, 640px);
+  justify-self:center;
+  aspect-ratio:16/9;
+  border-radius:8px;
+  overflow:hidden;
+}
+.project-thumb-featured{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  border:0;
+  margin:0;
+}
+.carousel-arrow{
+  position:static;
+  width:2.2rem;
+  height:2.2rem;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line-soft);
+  border-radius:999px;
+  background:rgba(0,0,0,0.45);
+  color:#fff8ef;
+  font-size:1.3rem;
+  line-height:1;
+  cursor:pointer;
+  z-index:2;
+  transition:background .16s ease, transform .16s ease;
+}
+.carousel-arrow:hover{background:rgba(0,0,0,0.62)}
+.carousel-arrow:active{transform:scale(.96)}
+.carousel-dots{
+  position:absolute;
+  left:50%;
+  bottom:.55rem;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:.42rem;
+  padding:.32rem .55rem;
+  border-radius:999px;
+  background:rgba(70,70,70,.38);
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(6px);
+  z-index:2;
+}
+.carousel-dot{
+  width:.5rem;
+  height:.5rem;
+  border-radius:999px;
+  background:rgba(255,255,255,.58);
+  border:0;
+  padding:0;
+  cursor:pointer;
+}
+.carousel-dot.is-active{background:rgba(255,255,255,1)}
+.featured-carousel.is-single{grid-template-columns:minmax(0, 1fr)}
+.featured-carousel.is-single .carousel-arrow,
+.featured-carousel.is-single .carousel-dots{display:none}
 .project-icon{width:44px;height:44px;display:block;object-fit:contain;opacity:.95}
 .project-tag{margin:.1rem 0 .35rem;color:var(--accent);font-size:1rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
 .project-links{display:flex;flex-wrap:wrap;gap:.7rem;margin:.8rem 0 0}
@@ -238,6 +309,7 @@ body{
 .icon-tip.tip-school::after{content:"School Project"}
 .icon-tip.tip-group::after{content:"Group Project"}
 .icon-tip.tip-solo::after{content:"Solo Project"}
+.icon-tip.tip-jam::after{content:"Game Jam"}
 
 .process-dropdown{margin-top:.85rem;border-top:1px solid var(--line);padding-top:.75rem}
 .process-dropdown summary{cursor:pointer;color:var(--text);font-weight:700;list-style:none}
@@ -275,6 +347,8 @@ body{
   .hero h1{font-size:2rem}
   .split{grid-template-columns:1fr}
   .projects-page .additional-grid{grid-template-columns:1fr}
+  .featured-carousel{grid-template-columns:2rem minmax(0, 1fr) 2rem;gap:.45rem}
+  .carousel-arrow{width:2rem;height:2rem;font-size:1.1rem}
 }
 
 /* utility */
@@ -311,6 +385,7 @@ button:focus{outline:3px solid var(--focus);outline-offset:3px}
 :root[data-theme='dark'] .engine-item{background:rgba(255,255,255,.015);border-color:rgba(255,255,255,.08)}
 :root[data-theme='dark'] .project-detail{background:rgba(0,0,0,.15);border-color:rgba(255,255,255,.08)}
 :root[data-theme='dark'] .projects-page .additional-motif{background:rgba(0,0,0,.15);border-color:rgba(255,255,255,.08)}
+:root[data-theme='dark'] .carousel-arrow{border-color:rgba(255,255,255,.24);background:rgba(0,0,0,.55)}
 :root[data-theme='light'] .project-detail::before,
 :root[data-theme='light'] .projects-page .additional-motif::before{
   background:rgba(248, 202, 164, 0.95);

@@ -75,6 +75,110 @@ function attachThemeToggle() {
   navList.appendChild(item);
 }
 
+function parsePipeList(value) {
+  if (!value) return [];
+  return value
+    .split(/[|,]/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function attachFeaturedCarousels() {
+  qsa('[data-featured-carousel]').forEach((carousel) => {
+    const imageEl = carousel.querySelector('[data-carousel-image]');
+    const prevBtn = carousel.querySelector('[data-carousel-prev]');
+    const nextBtn = carousel.querySelector('[data-carousel-next]');
+    const dotsWrap = carousel.querySelector('[data-carousel-dots]');
+    if (!imageEl || !prevBtn || !nextBtn || !dotsWrap) return;
+
+    const sources = parsePipeList(carousel.getAttribute('data-images'));
+    const alts = parsePipeList(carousel.getAttribute('data-alts'));
+    const fallbackSrc = imageEl.getAttribute('src') || '';
+
+    const slides = (sources.length ? sources : [fallbackSrc]).map((src, index) => ({
+      src,
+      alt: alts[index] || alts[0] || imageEl.alt || 'Project screenshot',
+    }));
+
+    if (!slides.length) return;
+
+    let index = 0;
+    const dots = [];
+
+    const render = () => {
+      const current = slides[index];
+      imageEl.src = current.src;
+      imageEl.alt = current.alt;
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('is-active', dotIndex === index);
+        dot.setAttribute('aria-current', dotIndex === index ? 'true' : 'false');
+      });
+    };
+
+    slides.forEach((_, dotIndex) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot';
+      dot.setAttribute('aria-label', `Go to image ${dotIndex + 1}`);
+      dot.addEventListener('click', () => {
+        index = dotIndex;
+        render();
+      });
+      dotsWrap.appendChild(dot);
+      dots.push(dot);
+    });
+
+    const shift = (delta) => {
+      index = (index + delta + slides.length) % slides.length;
+      render();
+    };
+
+    prevBtn.addEventListener('click', () => shift(-1));
+    nextBtn.addEventListener('click', () => shift(1));
+
+    carousel.tabIndex = 0;
+    carousel.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        shift(-1);
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        shift(1);
+      }
+    });
+
+    let touchStartX = null;
+    carousel.addEventListener(
+      'touchstart',
+      (event) => {
+        touchStartX = event.changedTouches[0]?.clientX ?? null;
+      },
+      { passive: true },
+    );
+    carousel.addEventListener(
+      'touchend',
+      (event) => {
+        if (touchStartX === null) return;
+        const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+        const delta = touchEndX - touchStartX;
+        touchStartX = null;
+        if (Math.abs(delta) < 40) return;
+        shift(delta > 0 ? -1 : 1);
+      },
+      { passive: true },
+    );
+
+    if (slides.length <= 1) {
+      carousel.classList.add('is-single');
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+    }
+
+    render();
+  });
+}
+
 function attachNavToggle(toggleSelector = '.nav-toggle', navSelector = '.site-nav') {
   const toggle = qs(toggleSelector);
   const nav = qs(navSelector);
@@ -104,6 +208,7 @@ function attachSmoothAnchors() {
 function initSite() {
   applyTheme(detectInitialTheme());
   attachThemeToggle();
+  attachFeaturedCarousels();
   setCurrentYear();
   setTimezone();
   attachNavToggle();

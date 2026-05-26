@@ -32,11 +32,16 @@
 		<main class="site-main container projects-page">
 			<section class="hero hero-compact">
 				<p class="eyebrow">Projects</p>
-				<h1>My Archive</h1>
+				<h1>My Work</h1>
 				<p class="lead">
 					Here you'll find all of my game design related projects, included are personal projects, school projects, and game jams.
                     My featured projects are the ones I'm most proud of but feel free to explore all of them!
 				</p>
+				<div class="hero-cta">
+						<a class="btn" href="#featured">Featured</a>
+						<a class="btn btn-ghost" href="#in-development">In Development</a>
+						<a class="btn btn-ghost" href="#additional"> Additional Work</a>
+					</div>
 			</section>
 
 			<section id="featured" class="card">
@@ -46,10 +51,48 @@
 					<div class="project-title-row">
 						<h3>Tanktrition</h3>
 					</div>
-					<img class="project-thumb" src="assets/images/TempImage.png" alt="Tanktrition project screenshot" />
+					<div
+						class="featured-carousel"
+						data-featured-carousel
+						data-images="assets/images/Tanktrition.png, assets/images/Tanktrition2.png, assets/images/Tanktrition3.png, assets/images/Tanktrition4.png"
+						data-alts="Tanktrition project screenshot"
+					>
+						<button
+							type="button"
+							class="carousel-arrow carousel-arrow-prev"
+							data-carousel-prev
+							aria-label="Previous project image"
+						>
+							&#10094;
+						</button>
+						<div class="featured-carousel-frame">
+							<img
+								class="project-thumb-featured"
+								data-carousel-image
+								src="assets/images/Tanktrition.png"
+								alt="Tanktrition project screenshot"
+							/>
+							<div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
+						</div>
+						<button
+							type="button"
+							class="carousel-arrow carousel-arrow-next"
+							data-carousel-next
+							aria-label="Next project image"
+						>
+							&#10095;
+						</button>
+					</div>
 					<div class="project-tag-row">
 						<p class="project-tag">Unity | PC Web</p>
 						<div class="project-media">
+							<span class="icon-tip tip-jam">
+								<img
+									class="project-icon tint-white-orange"
+									src="assets/images/Jams.svg"
+									alt="Game jam icon"
+								/>
+							</span>
 							<span class="icon-tip tip-school">
 								<img
 									class="project-icon tint-white-orange"
@@ -75,8 +118,13 @@
 						<p class="project-date">03/2026</p>
 					</div>
 				</article>
+			</section>
 
-				<article id="project-two" class="project-detail">
+			<section id="in-development" class="card">
+				<h2>Currently In Development</h2>
+				<p class="muted">These are the projects I'm actively iterating on. They may still be changing, but they reflect the direction I'm currently pushing my work.</p>
+				<ul class="projects additional-grid">
+					<li id="project-two" class="project-item additional-motif">
 					<div class="project-title-row">
 						<h3>Typinko</h3>
 					</div>
@@ -101,13 +149,14 @@
 						<p class="project-links"><a href="https://joshuwoshua.itch.io/typinko">Download</a> &nbsp;<a href="case-study-typinko.html">Case Study</a></p>
 						<p class="project-date">05/2026</p>
 					</div>
-				</article>
+					</li>
+				</ul>
 			</section>
 
 			<section id="additional" class="card">
 				<h2>Additional Projects</h2>
 				<p class="muted">
-					Here are some additional projects of mine. School projects are marked with an icon, but I'm proud of the ones listed here.
+					Here are some of my other projects that I'm proud of. Feel free to explore and check out the ones that catch your eye!
 				</p>
 				<ul class="projects additional-grid">
 					<li class="project-item additional-motif">
