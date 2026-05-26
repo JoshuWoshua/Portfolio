@@ -6,6 +6,9 @@ const qs = <T extends HTMLElement = HTMLElement>(sel: string) =>
 const qsa = <T extends HTMLElement = HTMLElement>(sel: string) =>
   Array.from(document.querySelectorAll(sel)) as T[];
 
+const THEME_KEY = 'portfolio-theme';
+type ThemeName = 'light' | 'dark';
+
 function setCurrentYear() {
   const yearEl = qs<HTMLSpanElement>('#year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -54,7 +57,62 @@ function setTimezone() {
   el.textContent = isDST ? 'Pacific Coast · PDT (UTC−7)' : 'Pacific Coast · PST (UTC−8)';
 }
 
+function detectInitialTheme(): ThemeName {
+  try {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'light' || saved === 'dark') return saved;
+  } catch {
+    // Ignore localStorage access issues and fall back to the default theme.
+  }
+
+  return 'light';
+}
+
+function applyTheme(theme: ThemeName) {
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+function getToggleLabel(theme: ThemeName) {
+  return theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+}
+
+function attachThemeToggle() {
+  const navList = qs<HTMLUListElement>('.site-nav ul');
+  if (!navList) return;
+
+  const existing = navList.querySelector<HTMLButtonElement>('.theme-toggle');
+  if (existing) return;
+
+  const themeButton = document.createElement('button');
+  themeButton.type = 'button';
+  themeButton.className = 'theme-toggle';
+
+  const currentTheme = (document.documentElement.getAttribute('data-theme') as ThemeName) || 'light';
+  themeButton.textContent = getToggleLabel(currentTheme);
+  themeButton.setAttribute('aria-label', 'Toggle light and dark color theme');
+
+  themeButton.addEventListener('click', () => {
+    const activeTheme = (document.documentElement.getAttribute('data-theme') as ThemeName) || 'light';
+    const nextTheme: ThemeName = activeTheme === 'light' ? 'dark' : 'light';
+
+    applyTheme(nextTheme);
+    themeButton.textContent = getToggleLabel(nextTheme);
+
+    try {
+      localStorage.setItem(THEME_KEY, nextTheme);
+    } catch {
+      // Ignore localStorage access issues.
+    }
+  });
+
+  const item = document.createElement('li');
+  item.appendChild(themeButton);
+  navList.appendChild(item);
+}
+
 function initSite() {
+  applyTheme(detectInitialTheme());
+  attachThemeToggle();
   setCurrentYear();
   setTimezone();
   attachNavToggle();

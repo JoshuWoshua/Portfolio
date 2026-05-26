@@ -19,12 +19,10 @@
 	<body>
 		<header class="site-header">
 			<div class="container header-inner">
-				<a class="brand" href="index.html">Joshua Kim-Pearson</a>
+				<a class="brand" href="index.html">JKP</a>
 				<nav class="site-nav" aria-label="Main navigation">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="#featured">Featured</a></li>
-						<li><a href="#additional">Additional</a></li>
 						<li><a href="index.html#contact">Contact</a></li>
 					</ul>
 				</nav>
@@ -44,121 +42,19 @@
 			<section id="featured" class="card">
 				<h2>Featured Projects</h2>
 				<p class="muted">These are the projects I'm most proud of, showcasing my skills and creativity. A case study is available for each project.</p>
-				<article id="project-one" class="project-detail has-badge">
-					<div class="project-badge-stack">
-						<span class="icon-tip tip-school">
-							<img
-								class="project-badge-icon tint-white-orange"
-								src="assets/images/School.svg"
-								alt="Graduation cap icon"
-							/>
-						</span>
-						<span class="icon-tip tip-group">
-							<img
-								class="project-badge-icon tint-white-orange"
-								src="assets/images/Group.svg"
-								alt="Group work icon"
-							/>
-						</span>
+				<article id="project-one" class="project-detail">
+					<div class="project-title-row">
+						<h3>Tanktrition</h3>
 					</div>
-					<p class="project-tag">Roguelike | PC Web</p>
-					<h3>Tanktrition</h3>
-					<p class="muted">
-						Designed the core gameplay loop and scripted enemy, player, and projectile behaviors. Built with a
-						partner in Unity2D for <a href="https://itch.io/jam/7drl-challenge-2026">7DRL2026</a>, including original player, enemy, and UI art assets.
-					</p>
-				<p class="project-links"><a href="https://stan-21.itch.io/tanktrition">Playable Build</a> &nbsp;<a href="case-study-tanktrition.html">Case Study</a></p>
-				</article>
-
-				<article id="project-two" class="project-detail">
-                    <div class="project-badge-stack">
-						<span class="icon-tip tip-solo">
-							<img
-								class="project-badge-icon tint-white-orange"
-								src="assets/images/Solo.svg"
-								alt="Solo work icon"
-							/>
-						</span>
-					</div>
-					<p class="project-tag">Typing - Incremental | Windows</p>
-					<h3>Typinko</h3>
-					<p class="muted">
-						Solo-developed desktop overlay game in Godot where typing speed drives progression. Designed the core loop,
-						scripted gameplay and UI systems, and created all art and sound assets.
-					</p>
-				<p class="project-links"><a href="https://joshuwoshua.itch.io/typinko">Download</a> &nbsp;<a href="case-study-typinko.html">Case Study</a></p>
-				</article>
-			</section>
-
-			<section id="additional" class="card">
-				<h2>Additional Projects</h2>
-				<p class="muted">
-					Here are some additional projects of mine. School projects are marked with an icon, but I'm proud of the ones listed here.
-				</p>
-				<ul class="projects additional-grid">
-					<li class="project-item additional-motif">
+					<img class="project-thumb" src="assets/images/TempImage.png" alt="Tanktrition project screenshot" />
+					<div class="project-tag-row">
+						<p class="project-tag">Unity | PC Web</p>
 						<div class="project-media">
 							<span class="icon-tip tip-school">
 								<img
 									class="project-icon tint-white-orange"
 									src="assets/images/School.svg"
-									alt="School project icon"
-								/>
-							</span>
-                            <span class="icon-tip tip-group">
-								<img
-									class="project-icon tint-white-orange"
-									src="assets/images/Group.svg"
-									alt="Group work icon"
-								/>
-							</span>
-						</div>
-                        <p class="project-tag">Platformer | PC Web</p>
-						<h3>Citty Kat</h3>
-						<p class="muted">Final project made in Phaser with 2 teammates. I primarily focused on the level design, but also worked on gameplay mechanics and UI elements.</p>
-                        <p class="project-links"><a href="https://joshuwoshua1.github.io/Final-Game-Project/">Playable Build</a></p>
-						<details class="process-dropdown">
-							<summary>View My Involvement</summary>
-							<div class="process-content muted">
-								<p>Player behaviors, Level Design, UI Elements, Asset Creation</p>
-							</div>
-						</details>	
-					</li>
-					<li class="project-item additional-motif">
-						<div class="project-media">
-							<span class="icon-tip tip-school">
-								<img
-									class="project-icon tint-white-orange"
-									src="assets/images/School.svg"
-									alt="School project icon"
-								/>
-							</span>
-                            <span class="icon-tip tip-solo">
-								<img
-									class="project-icon tint-white-orange"
-									src="assets/images/Solo.svg"
-									alt="Solo work icon"
-								/>
-							</span>
-						</div>
-                        <p class="project-tag">Platformer | PC Web</p>
-						<h3>Josh's Jumpy Jumble</h3>
-						<p class="muted">Short platformer project made in Phaser over 2 weeks. Main focus was on level design and gameplay mechanics, specifically to induce rage.</p>
-                        <p class="project-links"><a href="https://joshuwoshua1.github.io/2D-Platformer/">Playable Build</a></p>
-						<details class="process-dropdown">
-							<summary>View My Involvement</summary>
-							<div class="process-content muted">
-								<p>Solo pipeline, focus on game feel & level design</p>
-							</div>
-						</details>	
-					</li>
-					<li class="project-item additional-motif">
-						<div class="project-media">
-							<span class="icon-tip tip-school">
-								<img
-									class="project-icon tint-white-orange"
-									src="assets/images/School.svg"
-									alt="School project icon"
+									alt="Graduation cap icon"
 								/>
 							</span>
 							<span class="icon-tip tip-group">
@@ -169,16 +65,170 @@
 								/>
 							</span>
 						</div>
-						<p class="project-tag">Shopping Sim | Windows / PC Web</p>
-						<h3>Alein Store</h3>
-						<p class="muted">2 Week prototype made in Unity3D by a team of 6. Main focus was to build a functional shopping simulation experience within the time constraint.</p>
-						<p class="project-links"><a href="https://joshuwoshua.itch.io/alein-store">Playable Build & Download</a></p>
-						<details class="process-dropdown">
-							<summary>View My Involvement</summary>
-							<div class="process-content muted">
-								<p>Item behaviors, UI elements, general programming</p>
-							</div>	
-						</details>
+					</div>
+					<p class="muted">
+						Designed the core gameplay loop and scripted enemy, player, and projectile behaviors. Built with a
+						partner in Unity2D for <a href="https://itch.io/jam/7drl-challenge-2026">7DRL2026</a>, including original player, enemy, and UI art assets.
+					</p>
+					<div class="project-meta-row">
+						<p class="project-links"><a href="https://stan-21.itch.io/tanktrition">Playable Build</a> &nbsp;<a href="case-study-tanktrition.html">Case Study</a></p>
+						<p class="project-date">03/2026</p>
+					</div>
+				</article>
+
+				<article id="project-two" class="project-detail">
+					<div class="project-title-row">
+						<h3>Typinko</h3>
+					</div>
+					<img class="project-thumb" src="assets/images/TypinkoPreview.png" alt="Typinko project screenshot" />
+					<div class="project-tag-row">
+						<p class="project-tag">Godot | Windows</p>
+						<div class="project-media">
+							<span class="icon-tip tip-solo">
+								<img
+									class="project-icon tint-white-orange"
+									src="assets/images/Solo.svg"
+									alt="Solo work icon"
+								/>
+							</span>
+						</div>
+					</div>
+					<p class="muted">
+						Solo-developed desktop overlay game in Godot where typing speed drives progression. Designed the core loop,
+						scripted gameplay and UI systems, and created all art and sound assets.
+					</p>
+					<div class="project-meta-row">
+						<p class="project-links"><a href="https://joshuwoshua.itch.io/typinko">Download</a> &nbsp;<a href="case-study-typinko.html">Case Study</a></p>
+						<p class="project-date">05/2026</p>
+					</div>
+				</article>
+			</section>
+
+			<section id="additional" class="card">
+				<h2>Additional Projects</h2>
+				<p class="muted">
+					Here are some additional projects of mine. School projects are marked with an icon, but I'm proud of the ones listed here.
+				</p>
+				<ul class="projects additional-grid">
+					<li class="project-item additional-motif">
+						<div class="project-title-row">
+							<h3>Alein Store</h3>
+						</div>
+						<img class="project-thumb" src="assets/images/AleinStore.png" alt="Alein Store project screenshot placeholder" />
+						<div class="project-tag-row">
+							<p class="project-tag">Unity | Windows / PC Web</p>
+							<div class="project-media">
+								<span class="icon-tip tip-school">
+									<img
+										class="project-icon tint-white-orange"
+										src="assets/images/School.svg"
+										alt="School project icon"
+									/>
+								</span>
+								<span class="icon-tip tip-group">
+									<img
+										class="project-icon tint-white-orange"
+										src="assets/images/Group.svg"
+										alt="Group work icon"
+									/>
+								</span>
+							</div>
+						</div>
+						<p class="muted">Alein Store is a shopping simulation prototype born from a unique challenge: taking the theme of "wrong genre" and turning it into an engaging game concept. This project was 2 weeks long in a group of 6, where I primarily focused on gameplay mechanics and UI elements.</p>
+						<div class="project-meta-row">
+							<p class="project-links"><a href="https://joshuwoshua.itch.io/alein-store">Playable Build & Download</a></p>
+							<p class="project-date">05/2026</p>
+						</div>
+					</li>
+					<li class="project-item additional-motif">
+						<div class="project-title-row">
+							<h3>Citty Kat</h3>
+						</div>
+						<img class="project-thumb" src="assets/images/cittykat.png" alt="Citty Kat project screenshot placeholder" />
+						<div class="project-tag-row">
+							<p class="project-tag">Phaser | PC Web</p>
+							<div class="project-media">
+								<span class="icon-tip tip-school">
+									<img
+										class="project-icon tint-white-orange"
+										src="assets/images/School.svg"
+										alt="School project icon"
+									/>
+								</span>
+								<span class="icon-tip tip-group">
+									<img
+										class="project-icon tint-white-orange"
+										src="assets/images/Group.svg"
+										alt="Group work icon"
+									/>
+								</span>
+							</div>
+						</div>
+						<p class="muted">Citty Kat is a 2D platformer where you must get back to your home! This group project focused on level design, gameplay mechanics, and teamwork. This project was 2 weeks long in a group of 3, where I primarily focused on level design, movement, and UI.</p>
+						<div class="project-meta-row">
+							<p class="project-links"><a href="https://joshuwoshua1.github.io/Final-Game-Project/">Playable Build</a></p>
+							<p class="project-date">06/2025</p>
+						</div>
+					</li>
+					<li class="project-item additional-motif">
+						<div class="project-title-row">
+							<h3>Josh's Jumpy Jumble</h3>
+						</div>
+						<img class="project-thumb" src="assets/images/JJJ.png" alt="Josh's Jumpy Jumble project screenshot placeholder" />
+						<div class="project-tag-row">
+							<p class="project-tag">Phaser | PC Web</p>
+							<div class="project-media">
+								<span class="icon-tip tip-school">
+									<img
+										class="project-icon tint-white-orange"
+										src="assets/images/School.svg"
+										alt="School project icon"
+									/>
+								</span>
+								<span class="icon-tip tip-solo">
+									<img
+										class="project-icon tint-white-orange"
+										src="assets/images/Solo.svg"
+										alt="Solo work icon"
+									/>
+								</span>
+							</div>
+						</div>
+						<p class="muted">Josh's Jumpy Jumble is a short 2D platformer where you must collect all the diamonds littered around the map without dying. The main focus of this project was on level design, movement mechanics, and rage inducing gameplay. This project was 2 weeks long.</p>
+						<div class="project-meta-row">
+							<p class="project-links"><a href="https://joshuwoshua1.github.io/2D-Platformer/">Playable Build</a></p>
+							<p class="project-date">05/2025</p>
+						</div>
+					</li>
+					<li class="project-item additional-motif">
+						<div class="project-title-row">
+							<h3>Bombardillo Red!</h3>
+						</div>
+						<img class="project-thumb" src="assets/images/BombRed.png" alt="Bombardillo Red! project screenshot placeholder" />
+						<div class="project-tag-row">
+							<p class="project-tag">Phaser | PC Web</p>
+							<div class="project-media">
+								<span class="icon-tip tip-school">
+									<img
+										class="project-icon tint-white-orange"
+										src="assets/images/School.svg"
+										alt="School project icon"
+									/>
+								</span>
+								<span class="icon-tip tip-solo">
+									<img
+										class="project-icon tint-white-orange"
+										src="assets/images/Solo.svg"
+										alt="Solo work icon"
+									/>
+								</span>
+							</div>
+						</div>
+						<p class="muted">Bombardillo Red is a gallery shooter where you play as a fighter plane fighting through waves of enemies. Each level increases the enemie's stats and gives you a set of upgrade choices. This was my first project using Phaser, which lasted for 2 weeks.</p>
+						<div class="project-meta-row">
+							<p class="project-links"><a href="https://joshuwoshua1.github.io/GalleryShooter/">Playable Build</a></p>
+							<p class="project-date">05/2025</p>
+						</div>
 					</li>
                 <!--
 					<li class="project-item">
@@ -194,7 +244,7 @@
 			<div class="container">
 				<div class="footer-grid">
 					<p class="muted footer-copy">© <span id="year"></span> Joshua Kim-Pearson</p>
-                    <p class="muted">Page Updated: 4/23/2026</p>
+                    <p class="muted">Page Updated: 5/26/2026</p>
 					<p class="muted tz-display">Based in <span id="tz-name"></span></p>
 				</div>
                 
